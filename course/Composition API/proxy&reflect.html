@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proxy&Reflect</title>
+</head>
+<body>
+<h1>proxy</h1>
+<script>
+    const user = {
+        name: '张三',
+        sex: '男'
+    }
+
+    const proxyUser = new Proxy(user, {
+        get(target, prop) {
+            console.log('劫持get()', prop)
+            return Reflect.get(target, prop)
+        },
+        set(target, prop) {
+            console.log('劫持set()', prop)
+            return Reflect.set(target, prop)
+        }
+        deleteProperty(target, prop) {
+            console.log('劫持delete属性', prop)
+            return Reflect.deleteProperty(target, prop)
+        }
+    })
+    console.log(proxyUser)
+    console.log(proxyUser === user)
+</script>
+</body>
+</html>
