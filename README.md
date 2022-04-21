@@ -17,5 +17,8 @@
 1. 模块化
 2. 利用浏览器的localStorage存储数据
 
+## 参考
+https://blog.csdn.net/qq_41146650/article/details/111568328?utm_source=app&app_version=5.3.0
+
 
 
